@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css"; 
 
 export default function App() {
-  const apiKey = "91a720ef78e54db16de00d4656e7d9e5";
+  const apiKey = "SUA_CHAVE_AQUI";
   const IMAGE_BASE = "https://image.tmdb.org/t/p/w300";
 
   const [query, setQuery] = useState("");
