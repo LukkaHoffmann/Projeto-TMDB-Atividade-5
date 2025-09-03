@@ -1,0 +1,51 @@
+:root {
+  --bg:#0b0b0b;
+  --card:#111;
+  --text:#fff;
+  --muted:#bfb6ad;
+  --accent:#7a4f3a;
+}
+
+*{box-sizing:border-box}
+
+body, #root {
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.app{max-width:1100px;margin:24px auto;padding:20px}
+.header{display:flex;align-items:center;gap:16px}
+.title{font-size:22px;font-weight:700}
+.searchRow{display:flex;gap:8px;margin-top:14px}
+.input{flex:1;padding:10px;border-radius:8px;border:1px solid #222;background:#0d0d0d;color:var(--text)}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+.results{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border-radius:10px;padding:10px;display:flex;gap:10px}
+.poster{width:90px;border-radius:6px;object-fit:cover}
+.meta{flex:1}
+.movieTitle{font-weight:700}
+.metaSmall{color:var(--muted);font-size:13px;margin-top:6px}
+.actions{display:flex;gap:8px;align-items:center;margin-top:8px}
+.fav{background:transparent;border:1px solid #333;color:var(--muted);padding:6px;border-radius:8px;cursor:pointer}
+.fav.active{background:#2b1b15;color:#fff;border-color:var(--accent)}
+.pager{display:flex;gap:8px;justify-content:center;margin-top:18px}
+.detailsOverlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:20px}
+.detailsCard{background:var(--card);padding:18px;border-radius:12px;max-width:900px;width:100;color:var(--text);display:grid;grid-template-columns:240px 1fr;gap:16px}
+.closeBtn{position:absolute;right:22px;top:22px;background:#000;border:1px solid #333;color:var(--muted);padding:6px;border-radius:8px}
+.loading{margin-top:18px;color:var(--muted)}
+@media(max-width:720px){.detailsCard{grid-template-columns:1fr}}
+
+/* animação da claquete 🎬 */
+.clapper {
+  display: inline-block;
+  transform-origin: bottom left;
+  animation: clapperAnim 2s infinite;
+}
+
+@keyframes clapperAnim {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-25deg); }
+  40% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
