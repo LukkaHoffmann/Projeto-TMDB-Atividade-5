@@ -14,7 +14,7 @@ export default function App() {
   const [selected, setSelected] = useState(null);
   const [favorites, setFavorites] = useState({});
 
-  // Carrega favoritos
+
   useEffect(() => {
     try {
       const raw = localStorage.getItem("tmdb_favs_v1");
@@ -24,7 +24,7 @@ export default function App() {
     }
   }, []);
 
-  // Salva favoritos
+  
   useEffect(() => {
     try {
       localStorage.setItem("tmdb_favs_v1", JSON.stringify(favorites));
@@ -34,7 +34,7 @@ export default function App() {
     }
   }, [favorites]);
 
-  // Buscar filmes
+
   async function searchMovies(q, pg = 1) {
     if (!q || q.trim().length === 0) return;
     setLoading(true);
@@ -61,7 +61,7 @@ export default function App() {
     }
   }
 
-  // Detalhes do filme
+
   async function fetchDetails(id) {
     setLoading(true);
     setError(null);
@@ -80,7 +80,7 @@ export default function App() {
     }
   }
 
-  // Favoritar/desfavoritar
+ 
   function toggleFavorite(movie) {
     setFavorites((prev) => {
       const copy = { ...prev };
